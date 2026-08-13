@@ -1,38 +1,50 @@
 ---
 import ActShell from '../ActShell.astro';
+import DiagramLog from '../diagrams/DiagramLog.astro';
 ---
 
 <ActShell id="river" scene="river" accent="#63e6be">
   <div class="act-card center">
     <div class="panel">
-      <p class="kicker">第 4 幕 · 黑匣子之河</p>
-      <h2>一条永不遗忘的河流</h2>
+      <p class="kicker">第 4 幕 · 账本</p>
+      <h2>一本只加不删的账本</h2>
       <p>
-        你说的每句话、Agent 的每次思考、每个工具的调用和结果——
-        全都变成一颗<em>事件晶体</em>,按顺序落进这条河。
-        只增,不删,不改。
+        你跟它说的每句话、它的每句回答、它跑的每条命令和结果——全都按顺序记进一本账。这本账有个硬规矩:<em>只准往后写,不许涂改,不许撕页</em>。
       </p>
     </div>
   </div>
 
   <div class="act-card">
     <div class="panel">
-      <p><strong>为什么要把一切都记下来?</strong></p>
+      <p><strong>为什么要记这么细?</strong></p>
       <p>
-        因为这条河是<em>唯一的真相</em>。对话中断后接着聊、
-        把对话分叉成两条、回放整个过程找 bug——
-        所有这些能力,都是从同一条河里重新「放电影」放出来的。
+        因为 DeepSeek Harness 立了条铁律:<em>外脑能看到的东西,必须能从账本里重新整理出来</em>。它干脆不在脑子里另存一份「聊天记录」——每次问外脑之前,现场翻账本,把对话整理出来。
       </p>
+      <p>好处是:账本成了唯一的真相。脑子会乱,账本不会。</p>
+      <DiagramLog />
     </div>
   </div>
 
   <div class="act-card right">
     <div class="panel">
+      <p><strong>这本账能干嘛?用处大了。</strong></p>
       <p>
-        这个项目有一条铁律:<em>模型能看到的,必须能从日志重建</em>。
-        就像飞机的黑匣子:不记账的开支等于没发生;
-        只要账还在,失事后也能还原每一秒。
+        聊天中断了想接着聊?翻到账本末尾接着记就行。想把一个对话分成两条线各聊各的?把账本复印一份,各写各的。想看看它上次到底怎么搞砸的?把账本从头翻一遍,一秒不落。
       </p>
+      <p>
+        记账格式也管得很严:每条账是什么类型都要先登记;读到不认得的账,<em>宁可报错,也不瞎猜</em>。
+      </p>
+    </div>
+  </div>
+
+  <div class="act-card">
+    <div class="panel">
+      <p><strong>连「哪些账给外脑看」都分得很清。</strong></p>
+      <p>
+        你的消息、命令的结果,这些是「正账」,要给外脑看;而「这圈活几点开始的」这类记号是「便签」,只用于内部管理,不进外脑的眼。一本账,两类条目,整理的时候各归各位。
+      </p>
+      <div class="src-coords">想翻代码?<span class="code-chip">packages/core/session</span></div>
+      <span class="principle">设计思想:只信账本,不信脑子</span>
     </div>
   </div>
 </ActShell>

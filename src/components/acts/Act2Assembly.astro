@@ -1,43 +1,50 @@
 ---
 import ActShell from '../ActShell.astro';
+import DiagramSeam from '../diagrams/DiagramSeam.astro';
 ---
 
 <ActShell id="assembly" scene="assembly" accent="#8ce99a">
   <div class="act-card center">
     <div class="panel">
-      <p class="kicker">第 2 幕 · 装配车间</p>
-      <h2>每个能力,都是一套「三件套」</h2>
+      <p class="kicker">第 2 幕 · 三件套</p>
+      <h2>每项能力,都被拆成了三个零件</h2>
       <p>
-        星星不是乱插的。每一项能力都被拆成三个角色:
-        <em>插座</em>(接口定义)、<em>电器</em>(具体实现)、<em>插头</em>(使用者)。
+        DeepSeek Harness 有个讲究:光做出一块「能力积木」不算完,必须把它拆成三个零件分开做。这个讲究有个学名,叫「能力接缝」。
       </p>
-      <p>这个设计有个正经名字:能力接缝(capability seam)。</p>
+      <p>别管学名。记住插座、电器、插头,就够了。</p>
     </div>
   </div>
 
   <div class="act-card">
     <div class="panel">
-      <p><strong>拿「执行命令」这个能力举例:</strong></p>
+      <p><strong>拿「让 AI 能跑命令」这项能力举例:</strong></p>
       <p>
-        <span class="code-chip">dsh-shell</span> 定义插座长什么样;
-        <span class="code-chip">bash-local</span> 是一个电器(在你电脑上跑);
-        <span class="code-chip">tool-bash</span> 是插头,把它接到 Agent 手里。
+        先定插座(<span class="code-chip">dsh-shell</span>):规定「命令执行器」长什么样——给它一条命令,它得能跑、能回结果。只有规定,没有一行干活的代码。再做电器(<span class="code-chip">bash-local</span>):真在你电脑上跑命令的那个家伙。最后做插头(<span class="code-chip">tool-bash</span>):把执行器包装成 AI 能看懂的工具,递到它手里。
       </p>
-      <p>
-        想把命令挪到云端沙箱?只换电器,插座和插头纹丝不动——
-        <em>换发电厂,不用换充电器</em>。
-      </p>
+      <DiagramSeam />
     </div>
   </div>
 
   <div class="act-card right">
     <div class="panel">
-      <p><strong>亲手试试:</strong></p>
+      <p><strong>费这个劲干嘛?</strong></p>
       <p>
-        把三块积木拖进槽位,按下 <strong>BOOT</strong>。
-        一台 Agent 就这样被拼出来了——没有魔法,只有组合。
+        为了「换」的时候不疼。哪天不想让 AI 在你电脑上跑命令了,想挪到云端沙箱里跑?只换电器,插座和插头原封不动,AI 甚至毫无察觉——就像换发电厂,不用换你手机充电器。
       </p>
-      <p>你的消息,即将进入这样一台刚点亮的机器。</p>
+      <p>
+        DeepSeek Harness 真的演示过这个操作:改一份配置,执行环境从本地搬到云端,AI 看到的工具说明<em>一个字都没变</em>。
+      </p>
+    </div>
+  </div>
+
+  <div class="act-card">
+    <div class="panel">
+      <p>
+        刚才那三块积木,是你(或者滚动替你)装上去的。真实世界里也一样:DeepSeek Harness 开机时读装配清单,把积木一块块插好、点亮、自检——一台 AI 助手就这么诞生。
+      </p>
+      <p>没有魔法,只有拼装。</p>
+      <div class="src-coords">想翻代码?<span class="code-chip">packages/shell</span></div>
+      <span class="principle">设计思想:接口和实现分开,换谁都不疼</span>
     </div>
   </div>
 </ActShell>

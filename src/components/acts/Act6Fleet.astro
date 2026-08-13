@@ -1,39 +1,58 @@
 ---
 import ActShell from '../ActShell.astro';
+import DiagramFleet from '../diagrams/DiagramFleet.astro';
 ---
 
 <ActShell id="fleet" scene="fleet" accent="#b197fc">
   <div class="act-card center">
     <div class="panel">
-      <p class="kicker">第 6 幕 · 分身与闸门</p>
-      <h2>会分身,但守规矩</h2>
+      <p class="kicker">第 6 幕 · 帮手与签字</p>
+      <h2>能喊人帮忙,但大事要你签字</h2>
       <p>
-        任务太大,一个 Agent 忙不过来?
-        它可以<em>分裂出小飞船</em>——子代理,带着独立记忆飞出去执行任务,
-        回来只交一个结果宝箱。
+        任务太大,一个人干不完?DeepSeek Harness 可以喊「帮手」——派一个子代理(subagent)出去单干。但有一条铁规矩:危险的事,必须你点头。
       </p>
     </div>
   </div>
 
   <div class="act-card">
     <div class="panel">
-      <p><strong>母舰从不看小飞船的飞行日志。</strong></p>
+      <p><strong>帮手是怎么干活的?</strong></p>
       <p>
-        子代理中途试了十次错、绕了多少弯路,母舰一概不知,
-        也不必知——它只要那个宝箱。
-        这样,母舰的记忆就不会被分身的琐事撑爆。
+        就像你把一件事交代给同事:「帮我把这个仓库的测试全跑一遍,告诉我哪几个挂了。」同事怎么跑的、中间踩了什么坑,你一概不关心——他回来只说一句:「3 个挂了,名单在这。」
       </p>
+      <p>
+        帮手也一样:带着自己的独立记事本出去干,回来只交结果。帮手还能再派帮手,但最多传三层——防止无限外包。
+      </p>
+      <DiagramFleet />
     </div>
   </div>
 
   <div class="act-card right">
     <div class="panel">
-      <p><strong>最后,也是最重要的:闸门。</strong></p>
+      <p><strong>为什么要这么「见外」?</strong></p>
       <p>
-        删除文件、推送代码、执行陌生命令……
-        每个危险动作前,一道闸门落下:<em>必须你亲手点「允许」</em>。
+        为了保护主对话的工作台。帮手干活的琐碎过程要是全倒回来,工作台一下就满了——就像你不需要知道外卖员路上闯了几个红灯,你只需要饭。
       </p>
-      <p>能力越大的 Agent,闸门就要越牢。这是它对世界的承诺。</p>
+      <p>
+        派帮手时还能「按需配装备」:派出去查资料的,就不给它删文件的工具。多大的事,配多大的权。
+      </p>
+    </div>
+  </div>
+
+  <div class="act-card">
+    <div class="panel">
+      <p><strong>最后是「签字」——它对世界的承诺。</strong></p>
+      <p>
+        删文件、推代码、跑陌生命令……碰到这类危险动作,它会停下来问你:准,还是不准?命令行里问你,网页上弹窗问你,总之必须你亲口说「行」。
+      </p>
+      <p>
+        万一出故障、没人理它呢?<em>一律当「不准」处理</em>。就像保险丝:宁可断电,不可烧房。能力越大的 AI,刹车越要灵。
+      </p>
+      <div class="src-coords">
+        想翻代码?<span class="code-chip">packages/subagent</span>
+        <span class="code-chip">packages/interaction</span>
+      </div>
+      <span class="principle">设计思想:刹车失灵时,默认是刹住的</span>
     </div>
   </div>
 </ActShell>

@@ -228,3 +228,37 @@ body {
   .act-card { padding: 0 5vw; min-height: 74vh; }
   .act-card > .panel { padding: 1.5rem 1.4rem; }
 }
+
+/* ---------- 示意图与源码坐标 ---------- */
+
+.diagram {
+  margin: 1.2rem 0 0.4rem;
+  border-radius: 12px;
+  border: 1px solid var(--card-line);
+  background: rgba(5, 6, 15, 0.5);
+  padding: 0.9rem;
+}
+
+.diagram svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.principle {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.src-coords {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+}

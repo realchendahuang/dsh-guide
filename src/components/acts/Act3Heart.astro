@@ -1,39 +1,56 @@
 ---
 import ActShell from '../ActShell.astro';
+import DiagramLoop from '../diagrams/DiagramLoop.astro';
 ---
 
 <ActShell id="heart" scene="heart" accent="#ffa94d">
   <div class="act-card center">
     <div class="panel">
-      <p class="kicker">第 3 幕 · 主循环之心</p>
-      <h2>Agent 的全部智慧,<br />就是一个循环</h2>
+      <p class="kicker">第 3 幕 · 干活的节奏</p>
+      <h2>它干活的方式,跟你修东西一模一样</h2>
       <p>
-        你的消息进来了。接下来发生的事,说穿了只有四步:
-        <em>想 → 做 → 看结果 → 再想</em>。循环往复,直到任务完成。
+        想想你怎么修自行车:看一眼哪里坏了 → 琢磨 → 拧一下扳手 → 再看看 → 接着拧。DeepSeek Harness 干活的节奏跟这个一模一样,只不过扳手换成了命令行。
+      </p>
+      <p>这个节奏有个名字:agent loop(Agent 循环)。它是整台发动机的心脏。</p>
+    </div>
+  </div>
+
+  <div class="act-card">
+    <div class="panel">
+      <p><strong>一圈下来,具体是这么走的:</strong></p>
+      <p>
+        你的消息先进「收件箱」排队。轮到它了,助手先翻自己的笔记(记忆)和工具箱(能用的命令),一起打包发给大模型这个「外脑」。
+      </p>
+      <p>
+        外脑回话:要么直接答复你,要么说「帮我跑一下 npm test」。助手就真的去跑,把结果拿回来给外脑看,外脑再决定下一步。一直转到任务完成为止。
+      </p>
+      <DiagramLoop />
+    </div>
+  </div>
+
+  <div class="act-card right">
+    <div class="panel">
+      <p><strong>你平时看到的「打字机效果」,就是这么来的。</strong></p>
+      <p>
+        外脑每蹦出一个字,助手立刻记在账本上、同时显示给你。所以你能看着它「边想边写」,而不是干等半天、突然蹦出一大段。
+      </p>
+      <p>
+        出错也不慌:比如网络断了,有专门的「重试商量机制」——挂在那儿的插件会站出来说「我再试一次」,就像你刷新网页一样自然。
       </p>
     </div>
   </div>
 
   <div class="act-card">
     <div class="panel">
-      <p><strong>一圈心跳是这样跳的:</strong></p>
+      <p><strong>这个节奏本身,也能换。</strong></p>
       <p>
-        ① 取出你的消息,组装好记忆和工具清单;<br />
-        ② 把这一切发给「大脑」(大模型);<br />
-        ③ 大脑说:「帮我跑一下 <span class="code-chip">npm test</span>」;<br />
-        ④ 机器真的去跑,把结果喂回大脑——然后回到 ①。
+        还记得「一切都是积木」吗?「干活的节奏」也是一块积木。DeepSeek Harness 在节奏的每个节点都留了「挂钩」,别的积木挂上去就能插手——第五幕要讲的「前情提要」,就是挂在「每圈开始前」这个钩子上的。
       </p>
-    </div>
-  </div>
-
-  <div class="act-card right">
-    <div class="panel">
       <p>
-        Claude Code、Cursor、DeepSeek Harness……
-        世界上所有 coding agent,跳的都是同一支舞。
-        区别只在细节:怎么组装记忆、怎么挑选工具、怎么在出错时重试。
+        其实 Claude Code、Cursor 这些工具,心跳都是这个节奏。看懂这一圈,所有 AI 助手你就懂了八成。
       </p>
-      <p>看着这颗心脏跳动几圈,你就理解了 Agent 的 80%。</p>
+      <div class="src-coords">想翻代码?<span class="code-chip">packages/core/agent-loop</span></div>
+      <span class="principle">设计思想:连心脏也只是一块积木</span>
     </div>
   </div>
 </ActShell>

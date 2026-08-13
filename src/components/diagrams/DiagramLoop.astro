@@ -1,0 +1,48 @@
+---
+// 第 3 幕示意图:agent loop 六节点环形流程。
+const accent = '#ffa94d';
+const ink = '#e8ecf8';
+const dim = '#9aa3c0';
+const mono = 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+const nodes = [
+  { cx: 320, cy: 60, label: '收到任务' },
+  { cx: 515, cy: 123, label: '翻笔记+工具箱' },
+  { cx: 515, cy: 247, label: '问外脑' },
+  { cx: 320, cy: 310, label: '外脑回话' },
+  { cx: 125, cy: 247, label: '跑命令' },
+  { cx: 125, cy: 123, label: '结果给外脑看' },
+];
+// 椭圆轨道上的弧段(顺时针):[起x, 起y, 终x, 终y]
+const arcs = [
+  [366.8, 62.7, 487.2, 101.4],
+  [534.0, 146.4, 534.0, 223.6],
+  [487.2, 268.6, 366.8, 307.3],
+  [273.2, 307.3, 152.8, 268.6],
+  [106.0, 223.6, 106.0, 146.4],
+  [152.8, 101.4, 273.2, 62.7],
+];
+---
+
+<div class="diagram">
+  <svg viewBox="0 0 640 360" role="img" aria-label="agent loop:六个节点一圈又一圈">
+    <defs>
+      <marker id="dloop-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill={accent}></path>
+      </marker>
+    </defs>
+
+    <ellipse cx="320" cy="185" rx="225" ry="125" fill="none" stroke="rgba(255,169,77,0.15)" stroke-width="1" stroke-dasharray="3 6"></ellipse>
+    {arcs.map(([x1, y1, x2, y2]) => (
+      <path d={`M ${x1} ${y1} A 225 125 0 0 1 ${x2} ${y2}`} fill="none" stroke={accent} stroke-width="1.4" marker-end="url(#dloop-arrow)"></path>
+    ))}
+
+    {nodes.map((n) => (
+      <>
+        <rect x={n.cx - 58} y={n.cy - 17} width="116" height="34" rx="17" fill="rgba(255,169,77,0.12)" stroke={accent} stroke-width="1.2"></rect>
+        <text x={n.cx} y={n.cy + 4} text-anchor="middle" font-family={mono} font-size="12" fill={ink}>{n.label}</text>
+      </>
+    ))}
+
+    <text x="320" y="190" text-anchor="middle" font-family={mono} font-size="13" fill={dim}>一圈又一圈</text>
+  </svg>
+</div>

@@ -1,0 +1,35 @@
+---
+// 第 2 幕示意图:插座 / 电器 / 插头三件套,大括号合为一项能力。
+const accent = '#8ce99a';
+const ink = '#e8ecf8';
+const dim = '#9aa3c0';
+const mono = 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+const parts = [
+  { y: 24, title: '插座', sub: 'dsh-shell · 只定规矩,不干活' },
+  { y: 118, title: '电器', sub: 'bash-local · 真正跑命令' },
+  { y: 212, title: '插头', sub: 'tool-bash · 递给 AI' },
+];
+---
+
+<div class="diagram">
+  <svg viewBox="0 0 640 300" role="img" aria-label="插座、电器、插头三个零件凑成一项能力">
+    {parts.map((p) => (
+      <>
+        <rect x="30" y={p.y} width="330" height="66" rx="12" fill="rgba(140,233,154,0.07)" stroke={accent} stroke-width="1.2"></rect>
+        <text x="50" y={p.y + 28} font-family={mono} font-size="13" fill={ink}>{p.title}</text>
+        <text x="50" y={p.y + 50} font-family={mono} font-size="11" fill={dim}>{p.sub}</text>
+      </>
+    ))}
+
+    <!-- 大括号 -->
+    <path
+      d="M 398 30 C 386 30 384 46 384 62 L 384 128 C 384 146 374 151 366 151 C 374 151 384 156 384 174 L 384 240 C 384 256 386 272 398 272"
+      fill="none"
+      stroke={accent}
+      stroke-width="1.6"
+      stroke-linecap="round"
+    ></path>
+    <text x="424" y="146" font-family={mono} font-size="13" fill={ink}>三个凑齐,</text>
+    <text x="424" y="168" font-family={mono} font-size="13" fill={ink}>这项能力才算做完</text>
+  </svg>
+</div>

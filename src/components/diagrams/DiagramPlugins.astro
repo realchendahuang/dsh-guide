@@ -1,0 +1,46 @@
+---
+// 第 1 幕示意图:cordis.yml 装配清单 → 插线板上的三块积木。
+const accent = '#7cc7ff';
+const ink = '#e8ecf8';
+const dim = '#9aa3c0';
+const mono = 'ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+const blocks = [
+  { x: 396, label: '大脑' },
+  { x: 470, label: '干活节奏' },
+  { x: 544, label: '账本' },
+];
+---
+
+<div class="diagram">
+  <svg viewBox="0 0 640 300" role="img" aria-label="cordis.yml 清单照着拼出插线板上的积木">
+    <defs>
+      <marker id="dplugins-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill={accent}></path>
+      </marker>
+    </defs>
+
+    <!-- 左:装配清单 -->
+    <rect x="24" y="56" width="220" height="200" rx="10" fill="rgba(124,199,255,0.06)" stroke={accent} stroke-width="1.2"></rect>
+    <text x="42" y="86" font-family={mono} font-size="13" fill={ink}>cordis.yml</text>
+    <line x1="40" y1="98" x2="228" y2="98" stroke="rgba(124,199,255,0.35)" stroke-width="1"></line>
+    <text x="42" y="126" font-family={mono} font-size="12" fill={dim}>要哪些积木</text>
+    <text x="42" y="156" font-family={mono} font-size="12" fill={ink}>· llm-deepseek(大脑)</text>
+    <text x="42" y="186" font-family={mono} font-size="12" fill={ink}>· agent-loop(干活节奏)</text>
+    <text x="42" y="216" font-family={mono} font-size="12" fill={ink}>· session(账本)</text>
+
+    <!-- 箭头 -->
+    <line x1="254" y1="156" x2="358" y2="156" stroke={accent} stroke-width="1.5" marker-end="url(#dplugins-arrow)"></line>
+    <text x="306" y="140" text-anchor="middle" font-family={mono} font-size="12" fill={dim}>照着清单拼</text>
+
+    <!-- 右:插线板 + 三块积木 -->
+    <rect x="380" y="170" width="236" height="48" rx="24" fill="rgba(124,199,255,0.08)" stroke={accent} stroke-width="1.2"></rect>
+    {blocks.map((b) => (
+      <>
+        <rect x={b.x + 22} y="160" width="8" height="12" fill={accent} opacity="0.8"></rect>
+        <rect x={b.x + 38} y="160" width="8" height="12" fill={accent} opacity="0.8"></rect>
+        <rect x={b.x} y="118" width="70" height="44" rx="8" fill="rgba(124,199,255,0.22)" stroke={accent} stroke-width="1.4"></rect>
+        <text x={b.x + 35} y="145" text-anchor="middle" font-family={mono} font-size="12" fill={ink}>{b.label}</text>
+      </>
+    ))}
+  </svg>
+</div>

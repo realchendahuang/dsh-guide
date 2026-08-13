@@ -1,18 +1,18 @@
 ---
-// 尾声:从通识指向精读。
+// 尾声:回顾 + 源码地图 + 深入链接。
 ---
 
 <section class="outro">
   <p class="kicker">终章 · 把机器拆开</p>
-  <h2>这个网站讲的每个字,都有源码对应</h2>
+  <h2>现在,DeepSeek Harness 你懂了八成</h2>
   <p>
-    「插件宇宙」是 packages/ 下的 50 多个能力包;「主循环之心」是
-    agent-loop 包里的一个 while 循环;「黑匣子之河」是 append-only 的会话事件日志;
-    「熔炉」是 compaction;「分身与闸门」是 subagent 与 approval。
+    回顾这趟旅行:它由 50 多块可插拔的积木组成;每项能力都拆成插座、电器、插头三件套;它干活就是「看一眼、想一下、动一下、再看一眼」的循环;一切都记进一本只加不删的账;账太厚就写「前情提要」,原件永存;它能派帮手单干,但危险动作必须你签字。
   </p>
+  <div class="src-coords">
+    想翻代码?积木系统 <span class="code-chip">vendor/cordis</span> · 三件套 <span class="code-chip">packages/shell</span> · 干活节奏 <span class="code-chip">packages/core/agent-loop</span> · 账本 <span class="code-chip">packages/core/session</span> · 前情提要 <span class="code-chip">packages/compaction</span> · 帮手 <span class="code-chip">packages/subagent</span> · 签字 <span class="code-chip">packages/interaction</span>
+  </div>
   <p>
-    科普到此为止,精读从现在开始——DeepSeek Harness 是开源的,
-    每个设计决策为什么这么做,仓库里的设计笔记和事故报告(postmortem)都写着。
+    想再深入?这个团队连「为什么这么设计」都写了下来:设计笔记里记着每个决定否决过什么方案,事故报告里复盘着每次翻车的根因——比代码本身还好看。
   </p>
   <div class="outro-links">
     <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">
@@ -20,6 +20,9 @@
     </a>
     <a href="https://github.com/deepseek-ai/deepseek-harness/tree/master/docs" target="_blank" rel="noopener">
       架构文档 →
+    </a>
+    <a href="https://github.com/deepseek-ai/deepseek-harness/blob/master/AGENTS.md" target="_blank" rel="noopener">
+      设计原则 AGENTS.md →
     </a>
   </div>
 </section>

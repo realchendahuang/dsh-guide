@@ -1,38 +1,52 @@
 ---
 import ActShell from '../ActShell.astro';
+import DiagramForge from '../diagrams/DiagramForge.astro';
 ---
 
 <ActShell id="forge" scene="forge" accent="#f783ac">
   <div class="act-card center">
     <div class="panel">
-      <p class="kicker">第 5 幕 · 压缩熔炉</p>
-      <h2>记忆太长怎么办?<br />熔了它</h2>
+      <p class="kicker">第 5 幕 · 前情提要</p>
+      <h2>账太厚了?写个「前情提要」</h2>
       <p>
-        大脑的「工作台」大小有限(行话叫上下文窗口)。
-        聊得越久,河流越长,工作台快放不下了。
+        外脑的「工作台」大小是有限的(行话叫上下文窗口,DeepSeek 的模型是 12.8 万字)。账本越记越厚,工作台总有快堆不下的那一天。怎么办?
       </p>
     </div>
   </div>
 
   <div class="act-card">
     <div class="panel">
-      <p><strong>熔炉的解法很粗暴,也很优雅:</strong></p>
+      <p><strong>想想电视剧每集开头的「前情提要」。</strong></p>
       <p>
-        把上游那些陈年旧事,请大脑自己读一遍,
-        熔成一颗致密的<em>摘要水晶</em>。
-        从此大脑只看这颗水晶,工作台瞬间清爽。
+        四十集的剧,不可能每集都从头放一遍。于是开头来 30 秒:「上回说到……」——观众立马接上。DeepSeek Harness 干的就是这件事:把前面一大堆旧账,请外脑自己读一遍,写成一页「前情提要」。
+      </p>
+      <p>
+        什么时候写?两个时机:每圈干活前量一量,账本快满了就先写(防患于未然);或者外脑直接喊「装不下了」,立马写完再接着干。这个过程的学名:compaction(压缩)。
       </p>
     </div>
   </div>
 
   <div class="act-card right">
     <div class="panel">
+      <p><strong>关键是:提要盖不住原件。</strong></p>
       <p>
-        但注意:河床里的原始晶体<em>一颗都没少</em>。
-        摘要只是「遮住」了原文,没有删除它。
-        哪天想考古,原件永远还在。
+        最近的几页账原样保留——刚发生的事最要紧;前面的旧账被「前情提要」盖住,外脑从此只读提要。但旧账本身<em>一页都没撕</em>,你想翻,永远翻得到。
       </p>
-      <p>这就是「压缩」:牺牲细节换空间,但不牺牲真相。</p>
+      <p>
+        还有个细心的地方:写提要时,绝不把「一条命令」和「它的结果」从中间撕开——撕开了外脑就看不懂,就像前情提要剪到一半戛然而止。
+      </p>
+      <DiagramForge />
+    </div>
+  </div>
+
+  <div class="act-card">
+    <div class="panel">
+      <p><strong>所以「压缩」是个准确的名字。</strong></p>
+      <p>
+        牺牲的是细节,换来的是空间;而且牺牲的只是「外脑眼前的」——账本上一字未动。上一幕那条只加不删的河,一滴水都没有少。
+      </p>
+      <div class="src-coords">想翻代码?<span class="code-chip">packages/compaction</span></div>
+      <span class="principle">设计思想:细节可以让路,真相不能丢</span>
     </div>
   </div>
 </ActShell>

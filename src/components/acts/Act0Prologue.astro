@@ -1,0 +1,40 @@
+---
+// 序章:全屏 hero,打字机输入框,滚动后消息粒子启程。
+---
+
+<section class="act" id="prologue" data-scene="intro" style="--accent: #6ea8ff">
+  <div class="act-stage">
+    <canvas data-scene-canvas aria-hidden="true"></canvas>
+  </div>
+  <div class="act-flow">
+    <div class="hero" style="min-height: 100vh">
+      <p class="kicker">DeepSeek Harness · 交互式源码科普</p>
+      <h1 class="hero-title">一条消息的旅行</h1>
+      <p class="hero-sub">
+        你每天都在用 AI 编程助手。但你有没有想过:按下回车的那一秒,
+        你的这句话到底去了哪里?
+      </p>
+      <div class="hero-input">
+        <span class="prompt">❯</span>
+        <span class="typed" id="hero-typed"></span>
+      </div>
+      <p class="hero-sub" style="margin-top: 2rem; font-size: 0.95rem">
+        往下滚,跟着这条消息,钻进 Agent 的身体里看一看。
+      </p>
+      <div class="scroll-hint">SCROLL ▾</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // 打字机:敲出那句要踏上旅程的话。
+  const el = document.getElementById('hero-typed');
+  const text = '帮我修一个 bug';
+  let i = 0;
+  const tick = () => {
+    if (!el) return;
+    el.textContent = text.slice(0, i);
+    if (i++ <= text.length) setTimeout(tick, 140);
+  };
+  setTimeout(tick, 600);
+</script>

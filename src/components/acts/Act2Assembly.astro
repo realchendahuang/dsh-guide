@@ -1,0 +1,43 @@
+---
+import ActShell from '../ActShell.astro';
+---
+
+<ActShell id="assembly" scene="assembly" accent="#8ce99a">
+  <div class="act-card center">
+    <div class="panel">
+      <p class="kicker">第 2 幕 · 装配车间</p>
+      <h2>每个能力,都是一套「三件套」</h2>
+      <p>
+        星星不是乱插的。每一项能力都被拆成三个角色:
+        <em>插座</em>(接口定义)、<em>电器</em>(具体实现)、<em>插头</em>(使用者)。
+      </p>
+      <p>这个设计有个正经名字:能力接缝(capability seam)。</p>
+    </div>
+  </div>
+
+  <div class="act-card">
+    <div class="panel">
+      <p><strong>拿「执行命令」这个能力举例:</strong></p>
+      <p>
+        <span class="code-chip">dsh-shell</span> 定义插座长什么样;
+        <span class="code-chip">bash-local</span> 是一个电器(在你电脑上跑);
+        <span class="code-chip">tool-bash</span> 是插头,把它接到 Agent 手里。
+      </p>
+      <p>
+        想把命令挪到云端沙箱?只换电器,插座和插头纹丝不动——
+        <em>换发电厂,不用换充电器</em>。
+      </p>
+    </div>
+  </div>
+
+  <div class="act-card right">
+    <div class="panel">
+      <p><strong>亲手试试:</strong></p>
+      <p>
+        把三块积木拖进槽位,按下 <strong>BOOT</strong>。
+        一台 Agent 就这样被拼出来了——没有魔法,只有组合。
+      </p>
+      <p>你的消息,即将进入这样一台刚点亮的机器。</p>
+    </div>
+  </div>
+</ActShell>

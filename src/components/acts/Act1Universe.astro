@@ -1,0 +1,40 @@
+---
+import ActShell from '../ActShell.astro';
+---
+
+<ActShell id="universe" scene="universe" accent="#7cc7ff">
+  <div class="act-card center">
+    <div class="panel">
+      <p class="kicker">第 1 幕 · 插件宇宙</p>
+      <h2>这个 Agent 不是一个程序,<br />是一片星空</h2>
+      <p>
+        DeepSeek Harness 里<em>没有「主程序」</em>。它的思考能力、执行命令的能力、
+        读写文件的能力、记忆能力……每一样都是一个独立的插件,像星星一样散布在这片宇宙里。
+      </p>
+    </div>
+  </div>
+
+  <div class="act-card">
+    <div class="panel">
+      <p><strong>50 多颗星,每一颗都可以拔掉换掉。</strong></p>
+      <p>
+        换成别家的大模型?拔掉 LLM 那颗星,换一颗插上。
+        想让命令在沙箱里跑?换掉「执行命令」那颗星。
+        甚至 Agent 的「思考循环」本身,也是一颗可以替换的星。
+      </p>
+      <p>这就是它的第一条设计哲学:<em>一切皆插件</em>。</p>
+    </div>
+  </div>
+
+  <div class="act-card right">
+    <div class="panel">
+      <p><strong>谁决定点亮哪些星星?</strong></p>
+      <p>
+        一份叫 <span class="code-chip">cordis.yml</span> 的配置文件。
+        它像一张星图:列出要哪些插件、每个插件怎么配置。
+        你的消息马上要进入的,就是这张星图点亮的一整套星座。
+      </p>
+      <p>悬停在星星上,看看它们各自负责什么。</p>
+    </div>
+  </div>
+</ActShell>

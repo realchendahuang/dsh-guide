@@ -1,0 +1,19 @@
+---
+// 一幕的骨架:sticky 全屏画布(3D 场景挂载点)+ 覆盖其上的文案流。
+interface Props {
+  id: string;
+  scene: string;
+  accent: string;
+}
+
+const { id, scene, accent } = Astro.props;
+---
+
+<section class="act" id={id} data-scene={scene} style={`--accent: ${accent}`}>
+  <div class="act-stage">
+    <canvas data-scene-canvas aria-hidden="true"></canvas>
+  </div>
+  <div class="act-flow">
+    <slot />
+  </div>
+</section>

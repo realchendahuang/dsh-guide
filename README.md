@@ -1,5 +1,13 @@
 # 一条消息的旅行 · Journey of a Message
 
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/realchendahuang/dsh-guide?style=social)](https://github.com/realchendahuang/dsh-guide)
+[![GitHub forks](https://img.shields.io/github/forks/realchendahuang/dsh-guide?style=social)](https://github.com/realchendahuang/dsh-guide/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/realchendahuang/dsh-guide)](https://github.com/realchendahuang/dsh-guide/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/realchendahuang/dsh-guide/pulls)
+[![Follow @realchendahuang](https://img.shields.io/badge/Follow-%40realchendahuang-1DA1F2?logo=x&logoColor=white)](https://x.com/realchendahuang)
+
 钻进 Coding Agent 的身体里看一看 —— [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 的交互式源码科普。
 
 **在线访问:<https://chendahuang.com/dsh>**

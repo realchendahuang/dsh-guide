@@ -4,3 +4,5 @@ dist/
 .astro/
 *.log
 .DS_Store
+
+.cloudflare
